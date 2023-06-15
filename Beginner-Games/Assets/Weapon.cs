@@ -1,21 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Weapon : MonoBehaviour
 {
-    // Game object Bullet
-    public GameObject bt;
-
-    // Position of Bullet
     public Transform firePoint;
+    public GameObject bullet;
 
-    // Force of Bullet
     public float fireForce = 20f;
-    
+
     public void Fire() {
-        GameObject bullet = Instantiate(bt, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
-        
+        GameObject bt = Instantiate(bullet, firePoint.position, firePoint.rotation);
+        bt.GetComponent<Rigidbody2D>().AddForce(firePoint.up  * fireForce, ForceMode2D.Impulse);
     }
+    
 }

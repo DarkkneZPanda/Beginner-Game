@@ -5,13 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
+    public Weapon weapon;
     public float moveSpeed = 150f;
     Vector2 movementInput;
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
     Vector2 mousePosition;
-    public Weapon weapon;
+
+    
 
 
     // Start is called before the first frame update
@@ -21,11 +23,12 @@ public class PlayerInput : MonoBehaviour
       animator = GetComponent<Animator>();
       spriteRenderer = GetComponent<SpriteRenderer>();  
 
-      mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
     }
-
+  void Update() {
+    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);  
+  }
    private void FixedUpdate() {
-    
+  
 
     // # 1
     // rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
@@ -36,30 +39,31 @@ public class PlayerInput : MonoBehaviour
     // }
 
     // # 3 works with Linear Drag
-     rb.AddForce(movementInput * moveSpeed); 
-
-     if (movementInput.x < 0) {
-      spriteRenderer.flipX = true;
-     } else if (movementInput.x > 0) {
-      spriteRenderer.flipX = false;
-     }
-   // Vector2 aimDirection = mousePosition - rb.position;
+    rb.AddForce(movementInput * moveSpeed);
+    // Vector2 aimDirection = mousePosition - rb.position;
+    // float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x);
     // float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
     // rb.rotation = aimAngle;
+
+    if (movementInput.x < 0) {
+      spriteRenderer.flipX = true;
+    } else if (movementInput.x > 0) {
+      spriteRenderer.flipX = false;
+    }
      
    }
 
-   void OnMove(InputValue movementValue) {
-        movementInput = movementValue.Get<Vector2>();
-        if (movementInput.x != 0 || movementInput.y != 0) {
-          animator.SetBool("isMoving", true);
-        } else {
-          animator.SetBool("isMoving", false);
-        }
+  void OnMove(InputValue movementValue) {
+      movementInput = movementValue.Get<Vector2>();
+      if (movementInput.x != 0 || movementInput.y != 0) {
+        animator.SetBool("isMoving", true);
+      } else {
+        animator.SetBool("isMoving", false);
+      }
    }
 
-   void OnFire() {
-      weapon.Fire();
-   }
+  void OnFire() {
+    weapon.Fire();
+  }
 
 }

@@ -326,22 +326,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &522521749 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 518302333585186600, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
-  m_PrefabInstance: {fileID: 7281884195964638326}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e886c8961834a5c42a42d90091ff2403, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &692931187 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5029520500201091610, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
-  m_PrefabInstance: {fileID: 7281884195964638326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309454254
 GameObject:
   m_ObjectHideFlags: 0
@@ -48396,22 +48380,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 518302333585186600, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
-      propertyPath: bt
-      value: 
-      objectReference: {fileID: 2810019229730441491, guid: 14b4801c731fe5749a91cd1972305945, type: 3}
-    - target: {fileID: 518302333585186600, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 692931187}
     - target: {fileID: 5437278645321670442, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7306073641614245434, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 522521749}
     - target: {fileID: 8417964229950147149, guid: 4560a0385371d3f4e90915a66002f286, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -48518,10 +48490,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 8822853725742274866, guid: 0cd87d183754971459fb46e93644a2de, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8822853725742274866, guid: 0cd87d183754971459fb46e93644a2de, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd87d183754971459fb46e93644a2de, type: 3}
