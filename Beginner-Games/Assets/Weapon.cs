@@ -5,6 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Weapon : MonoBehaviour
 {
-
-     
+    
+    
 }

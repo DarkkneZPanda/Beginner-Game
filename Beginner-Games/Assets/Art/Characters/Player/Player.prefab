@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e8e69a814278d4486bfbef2effe5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
   moveSpeed: 200
 --- !u!50 &7551547639455175599
 Rigidbody2D:
