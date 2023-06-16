@@ -5,13 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    public Weapon weapon;
     public float moveSpeed = 150f;
     Vector2 movementInput;
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
-    Vector2 mousePosition;
 
     
 
@@ -24,9 +22,6 @@ public class PlayerInput : MonoBehaviour
       spriteRenderer = GetComponent<SpriteRenderer>();  
 
     }
-  void Update() {
-    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);  
-  }
    private void FixedUpdate() {
   
 
@@ -45,9 +40,9 @@ public class PlayerInput : MonoBehaviour
     // float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
     // rb.rotation = aimAngle;
 
-    if (movementInput.x < 0) {
+    if (movementInput.x < 0f) {
       spriteRenderer.flipX = true;
-    } else if (movementInput.x > 0) {
+    } else if (movementInput.x > 0f) {
       spriteRenderer.flipX = false;
     }
      
@@ -62,8 +57,19 @@ public class PlayerInput : MonoBehaviour
       }
    }
 
+
+
   void OnFire() {
-    weapon.Fire();
   }
+
+  void isFacingRight(bool isFacingRight) {
+    if(!isFacingRight) {
+      transform.Rotate(0f, -180f, 0f);
+    } else {
+
+    }
+  }
+
+
 
 }
