@@ -8,10 +8,10 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bullet;
 
-
     void Update() {
         if (Mouse.current.leftButton.wasPressedThisFrame) {
             Shoot();
+        
         }
     }
 

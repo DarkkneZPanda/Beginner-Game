@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6966058447094624532}
   - component: {fileID: 5199275026840639075}
   - component: {fileID: 5124288346849736477}
+  - component: {fileID: 1835968996807652817}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -118,7 +119,7 @@ Animator:
   m_GameObject: {fileID: 4964933845281607543}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d759c9cf3b0057f40ae516a13aefe98f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 05f3709a9e7ad6946bbd617e481ecab3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -155,3 +156,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &1835968996807652817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964933845281607543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acb90200bc01874086210a94d8d118f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 0}
