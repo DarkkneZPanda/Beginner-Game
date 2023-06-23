@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
-    public int health = 100;
     Animator animator;
-    void PlayerDamaged(int damage) {
-        health -= damage;
-
-        if (health <=0) {
-            PlayerDead();
-        }
-    }
+    public int currentHealth;
+    public int maxHealth;
     // Start is called before the first frame update
     void Start()
     {

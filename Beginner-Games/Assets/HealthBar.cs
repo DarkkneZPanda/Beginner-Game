@@ -6,23 +6,27 @@ using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider healthBar; // Slider
-    public TextMeshProUGUI healthBarValue; // Value of Health
+    public PlayerHealth playerHealth; // Reference to Plyer Health
+    private Slider healthBar; // Slider
+    public Image fillImage; // Health Fill
 
-    public int maxHealth;
-    public int currentHealth; 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        currentHealth = maxHealth; // Set current to max
+        healthBar = GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBarValue.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+        if (healthBar.value <= healthBar.minValue) {
+            fillImage.enabled = false;
+        }
+        if (healthBar.value > healthBar.minValue && !fillImage.enabled) {
+            fillImage.enabled = true;
+        }
 
-        healthBar.value = currentHealth;
-        healthBar.maxValue = maxHealth;
+        float Value = playerHealth.currentHealth / playerHealth.maxHealth;
+        healthBar.value = Value;
     }
 }
