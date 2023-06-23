@@ -30,7 +30,7 @@ public class WaveSpawn : MonoBehaviour
                 enemiesToSpawn.RemoveAt(0); // Remove 
                 spawnTimer = spawnInterval;
             } else {
-                waveTimer = 0;
+                waveTimer = 0; 
             }
         } else {
             spawnTimer -= Time.fixedDeltaTime;

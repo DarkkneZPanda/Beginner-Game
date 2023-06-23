@@ -6,11 +6,13 @@ public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 1f;
     Rigidbody2D rb;
+    Animator animator;
     Transform target;
     Vector2 moveDirection;
     // Start is called before the first frame update
     private void Awake() {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();   
     }
 
     void Start() {
@@ -23,6 +25,11 @@ public class EnemyMovement : MonoBehaviour
         if(target) {
             Vector3 directon = (target.position - transform.position).normalized;
             moveDirection = directon;
+            if (moveDirection.x != 0 || moveDirection.y != 0) {
+                animator.SetBool("isMoving", true);
+            } else {
+                animator.SetBool("isMoving", false);
+            }
         }
     }
 
