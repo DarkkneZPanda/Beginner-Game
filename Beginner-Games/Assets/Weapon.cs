@@ -8,23 +8,27 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bullet;
     public float fireForce = 20f;
+    public float rotationSpeed = 100f;
     Rigidbody2D rb;
-    Vector2 mousePos;
+    Vector3 mousePos;
     Vector2 worldPos;
+    Vector2 mouseDirect;
+    Transform position;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        position = GetComponent<Transform>();
     }
 
     private void Update() {
-        mousePos = Mouse.current.position.ReadValue();   
+        mousePos = Mouse.current.position.ReadValue();
         worldPos = Camera.main.ScreenToWorldPoint(mousePos);
     }
 
     private void FixedUpdate() {
-        Vector2 aimDirection = worldPos  - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = aimAngle;
+        
+        mouseDirect = new Vector2(worldPos.x - transform.position.x, worldPos.y - transform.position.y);
+        transform.up = mouseDirect;
     }
 
     public void Fire() {
