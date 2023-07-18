@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class FirePoint : MonoBehaviour
 {
-    private bool isFacingRight = true;
     Rigidbody2D rb;
     Vector3 mousePos;
     Vector2 worldPos;
@@ -16,13 +15,13 @@ public class FirePoint : MonoBehaviour
     }
 
     private void Update() {
-        mousePos = Mouse.current.position.ReadValue();
-        worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+        mousePos = Mouse.current.position.ReadValue(); // Reads local mouse Postion
+        worldPos = Camera.main.ScreenToWorldPoint(mousePos); // converts local to worldspace mouse position
     }
 
     private void FixedUpdate() {
-        mouseDirect = new Vector2(worldPos.x - transform.position.x, worldPos.y - transform.position.y);
-        transform.up = mouseDirect;
+        mouseDirect = new Vector2(worldPos.x - transform.position.x, worldPos.y - transform.position.y); // Mouse Direction
+        transform.up = mouseDirect; 
     }
 
 }

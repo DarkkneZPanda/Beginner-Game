@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3718232341686861686}
   - component: {fileID: 7551547639455175599}
   - component: {fileID: 1182515540640363297}
+  - component: {fileID: 7281884195964638332}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3454810005692028030}
+  - {fileID: 6495842961305523602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 200
-  weapon: {fileID: 1501061471107444719}
 --- !u!114 &3718232341686861686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,12 +217,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.4098144, y: 0.58143}
   m_EdgeRadius: 0
+--- !u!114 &7281884195964638332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437278645321670442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e886c8961834a5c42a42d90091ff2403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7905375524442846221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6495842961305523602}
+  m_Layer: 0
+  m_Name: Aim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6495842961305523602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905375524442846221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3454810005692028030}
+  m_Father: {fileID: 8417964229950147149}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4870998300313165817
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8417964229950147149}
+    m_TransformParent: {fileID: 6495842961305523602}
     m_Modifications:
     - target: {fileID: 7149229332284640072, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
       propertyPath: m_Name
@@ -250,15 +294,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7811687343337737095, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7811687343337737095, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7811687343337737095, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7811687343337737095, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -274,17 +318,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
---- !u!114 &1501061471107444719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6290847330200514582, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}
-  m_PrefabInstance: {fileID: 4870998300313165817}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e886c8961834a5c42a42d90091ff2403, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3454810005692028030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7811687343337737095, guid: 2c5bc7e60f6c5b84896eb195b7c7d1b4, type: 3}

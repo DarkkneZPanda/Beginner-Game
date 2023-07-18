@@ -7,7 +7,6 @@ public class PlayerInput : MonoBehaviour
 {
     public float moveSpeed = 150f;
     private bool isFacingRight = true;
-    public Weapon weapon;
     Vector2 movementInput;
     Rigidbody2D rb;
     Animator animator;
@@ -24,8 +23,8 @@ public class PlayerInput : MonoBehaviour
 
     }
    private void FixedUpdate() {
-    Transform Weap = transform.Find("Weapon");
-    Weap.localPosition = new Vector3(2.75f, 0.65f, 0f);
+    // Transform Weap = transform.Find("Weapon");
+    // Weap.localPosition = new Vector3(2.75f, 0.65f, 0f);
     // # 1
     // rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
 
@@ -47,9 +46,6 @@ public class PlayerInput : MonoBehaviour
       movementInput = movementValue.Get<Vector2>();
    }
 
-  void OnFire() {
-    weapon.Fire();
-  }
   public void Flip() {
     isFacingRight = !isFacingRight;
 
