@@ -6,26 +6,16 @@ using System;
 
 public class Weapon : MonoBehaviour
 {
-    public event EventHandler<OnShootEventArgs> OnShoot;
-    public class OnShootEventArgs : EventArgs {
-        public Vector3 firePointPos;
-        public Vector3 shootPos;
-    }
+    public Weapon2 weapon;
     private Transform aimWeapon;
-    private Transform firePoint;
-    private Animator animator;
-    // public GameObject bullet;
-    // public float fireForce = 20f;
 
     private void Awake() {
         aimWeapon = transform.Find("Aim");
-        animator = aimWeapon.GetComponent<Animator>();
-        firePoint = aimWeapon.Find("FirePoint");
     }
 
     private void Update() {
         Aiming();
-        Shooting();
+        // Shooting();
     }
 
     private void Aiming() {
@@ -35,17 +25,26 @@ public class Weapon : MonoBehaviour
         Vector3 aimDirect = (worldPos - transform.position).normalized; // 
         float angle = Mathf.Atan2(aimDirect.y, aimDirect.x) * Mathf.Rad2Deg; // Handles rotation
         aimWeapon.eulerAngles = new Vector3(0, 0, angle); //
+
+        Vector3 Scale = Vector3.one;
+        if (angle > 90 || angle < -90) {
+            Scale.y = -1f;
+        } else {
+            Scale.y = +1f;
+        }
+        aimWeapon.localScale = Scale;
     }
 
-    private void Shooting() {
+    // private void Shooting() {
+        // if(Mouse.current.leftButton.wasPressedThisFrame) {
+            // Vector3 mousePos = Mouse.current.position.ReadValue(); // Reads local mouse Postion
+            // Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+        // }
+    // }
+    public void OnFire() {
         if(Mouse.current.leftButton.wasPressedThisFrame) {
-            Vector3 mousePos = Mouse.current.position.ReadValue(); // Reads local mouse Postion
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            OnShoot?.Invoke(this, new OnShootEventArgs {
-                firePointPos = firePoint.position, 
-                shootPos = worldPos,
-            });
+            weapon.Fire();
         }
     }
+    
 }

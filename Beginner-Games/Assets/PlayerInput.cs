@@ -40,6 +40,11 @@ public class PlayerInput : MonoBehaviour
     } else if(movementInput.x < 0 && isFacingRight) {
       Flip();
     }
+    if(movementInput.x != 0) {
+      animator.SetBool("isMoving", true);
+    } else {
+      animator.SetBool("isMoving", false);
+    }
    }
 
  public void OnMove(InputValue movementValue) {
